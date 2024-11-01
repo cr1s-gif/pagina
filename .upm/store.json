@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"c22b5df7de43b86e77910b4495809157","lockfileHash":"2b80c4b88eae95b032f0a90f287bf37a","guessedImports":["bcryptjs","@neondatabase/serverless","jsonwebtoken","cookie-parser","express","express-handlebars"],"guessedImportsHash":"7c05e78d4fc13a6f376df9d217b0e0e6"}}}

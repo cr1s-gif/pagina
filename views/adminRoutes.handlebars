@@ -1,0 +1,9 @@
+<h1>Rutas de Administrador</h1>
+<ul>
+  {{#each routes}}
+    <li><a href="{{this.path}}">{{this.description}}</a></li>
+  {{/each}}
+</ul>
+
+<h3>Monto total de las ventas de la plataforma:</h3>
+{{Total_ventas}}

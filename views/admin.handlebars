@@ -1,0 +1,35 @@
+<h1>Eres Admin!</h1>
+
+<h1>Has ganado ${{total}}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id Producto</th>
+      <th scope="col"></th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each productos}}
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td><img src="{{this.image}}" class="rounded-circle" height="30px" width="30px" /></td>
+        <td>{{this.name}}</td>
+        <td>${{this.price}}</td>
+        <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+
+    <form action="/products/delete/{{this.id}}" method="POST">
+      <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+
+  <button type="button" class="btn btn-success"><a href="/producto/editar/{{this.id}}">Editar</a></button>
+</div></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<a href="/admin2"><button>Crear nuevo producto</button></a>
