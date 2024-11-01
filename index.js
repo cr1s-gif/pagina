@@ -8,6 +8,10 @@ import bcrypt from 'bcryptjs';
 const CLAVE_SECRETA = 'sedavueltaelsemestre123';
 const AUTH_COOKIE_NAME = 'segurida';
 
+const swaggerUi = require('swagger-ui-express'); // Para servir la documentación de Swagger en una ruta
+const swaggerSpec = require('./swaggerConfig');
+
+
 //base de datos cristóbal
 const sql = neon('postgresql://neondb_owner:lD2vTntEV8GS@ep-icy-hill-a88ta7n5.eastus2.azure.neon.tech/neondb?sslmode=require');
 
@@ -27,6 +31,8 @@ app.get('/', async (req, res) => {
   const lista = await sql('SELECT * FROM products');
   res.render('home', { lista });
 });
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Ruta para iniciar sesión
 app.get('/login', (req, res) => {
